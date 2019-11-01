@@ -17,6 +17,7 @@ function mojicheck(){
     if (miss == 0) {
         changemoji();
         //alert("good!");
+		//$("#text").val("<br>");
         $("#text").val("");
         point = point + quesmoji.length;
     }
@@ -50,6 +51,8 @@ function countdown() {
     $("#text").attr('disabled', false);
     $("#text").focus();
 	$(".instruction_start_shift").css('visibility','hidden');
+	//プログレスバー
+		progressbar(cnt,sec);
 	var sec = 60;
 	var dt = new Date();
 	console.log('Start: ',dt);
@@ -59,6 +62,8 @@ function countdown() {
 	var cnt = sec;
  	var id = setInterval(function(){
 		cnt--;
+	
+
 		$("#count").html(cnt)
 		console.log($("#count").html());
 		dt = new Date();
@@ -72,18 +77,15 @@ function countdown() {
 			$(".count_div").css('visibility','hidden');
 			$("#moji").css('visibility','hidden');
 			countdown_func_moving = 0;
+			//プログレスバーを戻す処理
+			$(".bar").animate({'width':'99%'},{duration:500});
+			
 		}
 	},1000);
 };
 //問題を変更する処理
 function changemoji() {
-	var word =["アフガニスタン","アルバニア","オーストラリア","ブルキナファソ","コロンビア","コートジボアール","エストニア",
-"フィンランド",
-"ニュージーランド",
-"インドネシア",
-"ウズベキスタン",
-"サウジアラビア",
-"トルクメニスタン"] 
+	var word =["アフガニスタン","アルバニア","オーストラリア","ブルキナファソ","コロンビア","コートジボアール","エストニア","フィンランド","ニュージーランド","インドネシア","ウズベキスタン","サウジアラビア","トルクメニスタン"] 
 	var random = Math.floor(Math.random() * word.length);
 	console.log(word[random]);
     $("#moji").html(word[random]);
@@ -117,3 +119,10 @@ $(function () {
 function nextpage(){
 	location.href = "result.php?result="+$("#point").html();
 }
+
+//プログレスバー
+function progressbar(time,count){
+	$(".bar").animate({'width':'0%'},{duration:60000});
+}
+
+
