@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="main.js"></script>
+<link rel ="stylesheet" href="common.css" type="text/css" />
+</head>
+<body>
+	<header>
+	<h2>タイピングマラソン</h2>
+	</header>
+    <main>
+        <div class="instruction">
+            <div class="instruction_start">
+                <div class="instruction_start_shift"><p>シフトキーを入力してください</p></div>
+                <!--<button onclick="countdown()">スタート</button>-->
+            </div>
+            <div class="count_div">残り<b id="count">60</b>秒</div>
+			<div><b id="count_pre">3</b></div>	
+        </div>
+        <div>
+            <p id="moji"></p>
+            <form onsubmit="return false;" autocomplete="off">
+                <input type="text" id="text" autocomplete="nope"><br>
+            </form>
+            <p>現在<b id="point">0</b>文字入力</p>
+        </div>
+	<button><a href="index.html">トップに戻る</a></button>
+    </main>
+	<footer></footer>
+	
+</body>
+</html>

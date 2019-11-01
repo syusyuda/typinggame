@@ -1,0 +1,25 @@
+body{
+	background:aquamarine;
+    margin: 0;
+	text-align:center;
+}
+header{
+	background:lightgreen;
+}
+header h2{
+	font-family:'serif';
+    margin: 0;
+    text-align:center;
+}
+main{
+	padding: 0;
+	margin: 0 20%;
+	height: 100vh;
+	background:white;
+    text-align:center;
+}
+input{
+	border: medium #c0c0c0 dotted;
+	outline:none;
+}
+
