@@ -17,7 +17,6 @@ function mojicheck(){
     if (miss == 0) {
         changemoji();
         //alert("good!");
-		//$("#text").val("<br>");
         $("#text").val("");
         point = point + quesmoji.length;
     }
@@ -26,15 +25,37 @@ function mojicheck(){
 }
 //プレカウントダウン部分
 function precountdown(){
+	$(".instruction_start_shift").css('visibility','hidden');
 	countdown_func_moving = 1;
 	$("#count_pre").css('visibility','visible');
+	//カウントダウン　文字拡大
+	$(".precount_div").css({
+		position:'relative'
+	});
+	$("#count_pre").css({
+		position:'absolute',
+		margin:'auto',
+		top:0,
+		left:0,
+		right:0,
+		bottom:0
+	});
+	$("#count_pre").css('font-size','1em');
+	$("#count_pre").animate({'font-size':'50px'},500);
+
 	var presec = $("#count_pre").html();
 	var precount = setInterval(function(){
 		presec--;
+
+		$("#count_pre").css('font-size','1em');
 		$("#count_pre").html(presec);
+		$("#count_pre").animate({'font-size':'50px'},500);
 		if(presec <= 0){
 			clearInterval(precount);
 			$("#count_pre").html(3);
+			//拡大した文字を戻す
+			$("#count_pre").css('font-size','1em');
+
 			$("#count_pre").css('visibility','hidden');
 			countdown();
 		}
@@ -42,7 +63,6 @@ function precountdown(){
 };
 //カウントダウン部分
 function countdown() {
-
 	$("#point").html("0");
 	$("#moji").css('visibility','visible');
     //ボタンを押せなくする
@@ -50,7 +70,7 @@ function countdown() {
     $("button").attr('disabled', true);
     $("#text").attr('disabled', false);
     $("#text").focus();
-	$(".instruction_start_shift").css('visibility','hidden');
+	
 	//プログレスバー
 		progressbar(cnt,sec);
 	var sec = 60;
@@ -62,8 +82,14 @@ function countdown() {
 	var cnt = sec;
  	var id = setInterval(function(){
 		cnt--;
-	
-
+		//プログレスバー　色変更
+		if(cnt == 45){
+			$('.bar').css('background','yellow');
+		}else if(cnt == 30){
+			$('.bar').css('background','orange');
+		}else if(cnt == 15){
+			$('.bar').css('background','red');
+		}
 		$("#count").html(cnt)
 		console.log($("#count").html());
 		dt = new Date();
@@ -79,7 +105,7 @@ function countdown() {
 			countdown_func_moving = 0;
 			//プログレスバーを戻す処理
 			$(".bar").animate({'width':'99%'},{duration:500});
-			
+			$('.bar').css('background','springgreen');
 		}
 	},1000);
 };
@@ -106,7 +132,7 @@ $(function () {
         mojicheck();
     });
 });
-//シフト入力で開始する処理
+//スペース入力で開始する処理
 $(function () {
     $(window).on('keyup',function (e) {
 		if (e.keyCode == "32" && countdown_func_moving == 0) {
@@ -122,7 +148,7 @@ function nextpage(){
 
 //プログレスバー
 function progressbar(time,count){
-	$(".bar").animate({'width':'0%'},{duration:60000});
+	$(".bar").animate({'width':'0%'},60000,'linear',);
 }
 
 
