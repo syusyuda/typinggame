@@ -15,10 +15,19 @@ function mojicheck(){
     }
 
     if (miss == 0) {
+		//オートコンプリート無効化(できなかった)
+		$("#text").attr('name','0');
+		console.log("aaaa");
+		//inputタグを消して新しくする
+		$('#form_text').append('<input type="text" id="text"autocomplete="off" name="'+Math.random()+'"><br>');
+		$('#text').focus();
+		//文字変更
         changemoji();
-        //alert("good!");
-        $("#text").val("");
-        point = point + quesmoji.length;
+        
+		point = point + quesmoji.length;
+		$("#text").val('');
+		//オートコンプリート無効化(できなかった)
+		$("#text").attr('name',Math.random());
     }
     
     $("#point").html(point);
