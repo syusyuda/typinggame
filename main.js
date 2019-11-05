@@ -17,19 +17,17 @@ function mojicheck(){
             miss++;
         }
     }
-
     if (miss == 0) {
-		
-		
-        
-
-        //オートコンプリート無効か
+        //オートコンプリート無効化
         if (first == 1) {
             $("#text").val('');
             //文字変更
+            $(".circle").css('opacity', '1.0');
+            $(".circle").animate({ 'opacity': '0.0' }, 300);
             changemoji();
             point = point + quesmoji.length;
             first = 0;
+
         } else {
             first = 1;
         }	
@@ -55,7 +53,7 @@ function precountdown(){
 		bottom:0
 	});
 	$("#count_pre").css('font-size','1em');
-	$("#count_pre").animate({'font-size':'50px'},500);
+	$("#count_pre").animate({'font-size':'2em'},500);
 
 	var presec = $("#count_pre").html();
 	var precount = setInterval(function(){
@@ -63,7 +61,7 @@ function precountdown(){
 
 		$("#count_pre").css('font-size','1em');
 		$("#count_pre").html(presec);
-		$("#count_pre").animate({'font-size':'50px'},500);
+		$("#count_pre").animate({'font-size':'2em'},500);
 		if(presec <= 0){
 			clearInterval(precount);
 			$("#count_pre").html(3);
@@ -139,7 +137,8 @@ $(window).on('load', function () {
 	$(".count_div").css('visibility','hidden');
     $("#count_pre").css('visibility', 'hidden');
 //円表示
-    $(".circle").css('visibility', 'hidden');
+    $(".circle").css('opacity', '0.0');
+
 	$("button").attr('disabled', true);
 });
 //入力時の処理
