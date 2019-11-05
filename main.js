@@ -23,7 +23,7 @@ function mojicheck(){
             $("#text").val('');
             //文字変更
             $(".circle").css('opacity', '1.0');
-            $(".circle").animate({ 'opacity': '0.0' }, 300);
+            $(".circle").animate({ 'opacity': '0.0' }, 500);
             changemoji();
             point = point + quesmoji.length;
             first = 0;

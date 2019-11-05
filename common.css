@@ -23,21 +23,21 @@ input{
 	border: none;
 	/* border: underline #c0c0c0; */
 	outline:none;
-    width:50%;
+    width:10em;
     font-size:1.5em;
     border-bottom:solid 1px;
 
 }
 .progressbar{
-	height: 14px;
+	height: 20px;
 	background: gray;
-	border-radius:7px;
+	border-radius:10px;
 	position:relative;
 }
 .progressbar .bar_back{
-	height: 8px;
+	height: 16px;
 	background:white;
-	border-radius:5px;
+	border-radius:8px;
 	position:absolute;
 	margin:auto auto auto auto;
 	width: 99%;
@@ -48,9 +48,9 @@ input{
 }
 
 .progressbar .bar{
-	height: 8px;
+	height: 16px;
 	background:springgreen;
-	border-radius:5px;
+	border-radius:8px;
 	position:absolute;
 	margin:auto auto auto auto;
 	padding: auto;
@@ -72,7 +72,10 @@ input{
     height:80px;
     line-height:80px;
     border-radius:50%;
-    border:solid 3px red;
+    border:solid 6px red;
 }
-
+/*ƒ{ƒ^ƒ“*/
+.btn-index{
+    background: orange;
+}
 
