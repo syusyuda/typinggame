@@ -32,9 +32,7 @@ function mojicheck(){
             first = 0;
         } else {
             first = 1;
-        }
-		
-		
+        }	
     }
     
     $("#point").html(point);
@@ -139,7 +137,9 @@ $(window).on('load', function () {
     $("#text").attr('disabled', true);
 	$("#moji").css('visibility','hidden');
 	$(".count_div").css('visibility','hidden');
-	$("#count_pre").css('visibility','hidden');
+    $("#count_pre").css('visibility', 'hidden');
+//円表示
+    $(".circle").css('visibility', 'hidden');
 	$("button").attr('disabled', true);
 });
 //入力時の処理
