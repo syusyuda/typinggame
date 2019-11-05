@@ -4,20 +4,28 @@ body{
 	text-align:center;
     font-size:3em;
 }
-header{
-	background:lightgreen;
+header {
+    background: lightgreen;
+    color:white;
 }
 header h2{
 	font-family:'serif';
     margin: 0;
-    text-align:center;
+    
 }
 main{
 	padding: 0;
-	margin: 0 20%;
+	margin: 0 15%;
 	height: 100vh;
 	background:white;
     text-align:center;
+}
+.main p:nth-of-type(1){
+    margin-top:0;
+    padding-top:10%;
+}
+main div:nth-of-type(1){
+   
 }
 input{
 	border: none;
@@ -63,11 +71,11 @@ input{
 /*円の描画*/
 .circle{
     position:absolute;
-    top:0;
+    top:10%;
     left:0;
     right:0;
     bottom:0;
-    margin:10% auto;
+    margin:auto;
     width:80px;
     height:80px;
     line-height:80px;
@@ -75,7 +83,27 @@ input{
     border:solid 6px red;
 }
 /*ボタン*/
-.btn-index{
-    background: orange;
+#btn-index {
+    font-size: 30px;
+    width: 30%;
+    margin: auto;
+    background: #00bfff;
+    border-radius: 23px;
+    color: white;
 }
-
+    #btn-index a {
+        color: white;
+        border: none;
+        text-decoration: none;
+    }
+#btn-index:hover {
+    background: #87cefa;
+}
+#btn-index a:hover{
+    color:white;
+}
+/*イラスト*/
+.png{
+    width:300px;
+    height:400px;
+}
