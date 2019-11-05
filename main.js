@@ -1,4 +1,8 @@
 //チェック部分
+
+//オートコンプリート
+//このfirstが0のあいだはテキストボックスが空白にならない
+var first = 0;
 function mojicheck(){
     var miss = 0;
     var point = parseInt($("#point").html(),10);
@@ -15,19 +19,22 @@ function mojicheck(){
     }
 
     if (miss == 0) {
-		//オートコンプリート無効化(できなかった)
-		$("#text").attr('name','0');
-		console.log("aaaa");
-		//inputタグを消して新しくする
-		$('#form_text').append('<input type="text" id="text"autocomplete="off" name="'+Math.random()+'"><br>');
-		$('#text').focus();
-		//文字変更
-        changemoji();
+		
+		
         
-		point = point + quesmoji.length;
-		$("#text").val('');
-		//オートコンプリート無効化(できなかった)
-		$("#text").attr('name',Math.random());
+
+        //オートコンプリート無効か
+        if (first == 1) {
+            $("#text").val('');
+            //文字変更
+            changemoji();
+            point = point + quesmoji.length;
+            first = 0;
+        } else {
+            first = 1;
+        }
+		
+		
     }
     
     $("#point").html(point);
