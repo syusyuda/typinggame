@@ -2,7 +2,8 @@ body{
 	background:aquamarine;
     margin: 0;
 	text-align:center;
-    font-size:3em;
+	font-size:3em;
+	height: 100vh;
 }
 header {
     background: aquamarine;
@@ -16,7 +17,7 @@ header h2{
 main{
 	padding: 0;
 	margin: 0 15%;
-	height: 100vh;
+	
 	background:white;
     text-align:center;
     border-radius: 50px;
@@ -69,7 +70,7 @@ input{
 	bottom: 0;
 	left: 0;
 }
-/*‰~‚Ì•`‰æ*/
+/*ï¿½~ï¿½Ì•`ï¿½ï¿½*/
 .circle{
     position:absolute;
     top:10%;
@@ -83,7 +84,7 @@ input{
     border-radius:50%;
     border:solid 6px red;
 }
-/*ƒ{ƒ^ƒ“*/
+/*ï¿½{ï¿½^ï¿½ï¿½*/
 #btn-index {
     font-size: 30px;
     width: 30%;
@@ -105,7 +106,7 @@ input{
 #btn-index a:hover{
     color:white;
 }
-/*ƒCƒ‰ƒXƒg*/
+/*ï¿½Cï¿½ï¿½ï¿½Xï¿½g*/
 .png{
     width:300px;
     height:400px;
