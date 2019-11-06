@@ -5,8 +5,8 @@ body{
     font-size:3em;
 }
 header {
-    background: lightgreen;
-    color:white;
+    background: aquamarine;
+    color: white;
 }
 header h2{
 	font-family:'serif';
@@ -19,6 +19,7 @@ main{
 	height: 100vh;
 	background:white;
     text-align:center;
+    border-radius: 50px;
 }
 .main p:nth-of-type(1){
     margin-top:0;
@@ -90,15 +91,17 @@ input{
     background: #00bfff;
     border-radius: 23px;
     color: white;
+    border: solid 5px orange;
 }
     #btn-index a {
         color: white;
         border: none;
         text-decoration: none;
     }
-#btn-index:hover {
-    background: #87cefa;
-}
+    #btn-index:hover {
+        background: #87cefa;
+        border: solid 5px #F5DEB3;
+    }
 #btn-index a:hover{
     color:white;
 }
